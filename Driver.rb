@@ -10,7 +10,7 @@ def add
 	d=gets.chomp
 	str= %Q(#{y}-#{m}-#{d})
 	puts "Name :".yellow
-	name=gets.chomp
+	name=gets.chomp.downcase
 	puts "Description (optional) :".yellow
 	description=gets.chomp
 	if (!name.empty? && str=~/^\d{4}\-\d{1,2}\-\d{1,2}$/)
@@ -30,7 +30,7 @@ def edit
 	d=gets.chomp
 	str= %Q(#{y}-#{m}-#{d})
 	puts "Name :".yellow
-	name=gets.chomp
+	name=gets.chomp.downcase
 	puts "Description (optional) :".yellow
 	description=gets.chomp
 	if (!name.empty? && str=~/^\d{4}\-\d{1,2}\-\d{1,2}$/)
@@ -50,7 +50,7 @@ def delete
 	d=gets.chomp
 	str= %Q(#{y}-#{m}-#{d})
 	puts "Name :".yellow
-	name=gets.chomp
+	name=gets.chomp.downcase
 	if (!name.empty? && str=~/^\d{4}\-\d{1,2}\-\d{1,2}$/)
 			Calendar.delete_event(Date.strptime(str,"%Y-%m-%d") ,name)
 	else
