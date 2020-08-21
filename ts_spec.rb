@@ -3,9 +3,6 @@ require 'rspec'
 require 'date'
 RSpec.describe Calendar do 
 	context "when testing Calendar class" do
-		# before(:each) do
-		# 	@c=Calendar.instance
-		# end
 
 		it "should display month view when we call display_calendar" do
 			check=Calendar.display_calender
@@ -56,11 +53,7 @@ RSpec.describe Calendar do
 		it "should delete event on a specific date when we call delete_event" do
 			expect { Calendar.delete_event(Date.today+3, "Meeting") }.to output("Deleted Event: Meeting=>  Monthly family meeting".blue+"\n").to_stdout
 		end
-		
-		# it "should display all events of a month when we call display_month_event" do
-		# 	expect { Calendar.display_month_event(8) }.to output("Events in August: ".blue+"\n"+"Meeting=> Monthly family meeting"+"\n"+"Birthday=> Aleena Birthday"+"\n").to_stdout
-		# end
-		
+				
 	end
 	
 end
